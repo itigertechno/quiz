@@ -1,0 +1,72 @@
+@import "normalize.css";
+
+html {
+  background: #FFF9EF;
+}
+
+.custom-checkbox {
+  accent-color: #CE8C74;
+  border-radius: 8px;
+
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  transition: 0.2s checked;
+
+  &+label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    gap: 12px;
+  }
+
+  &+label::before {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1.4px solid #E3D5CA;
+    border-radius: 8px;
+    background-color: #FFF9EF;
+  }
+
+  &:checked+label::before {
+    content: "";
+    font-size: 16px;
+    color: #fff;
+    background-image: url("/icons/check.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &:checked+label::before {
+    background-color: #CE8C74;
+    border-color: #CE8C74;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: "Effra";
+  src: url("~assets/fonts/Effra-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("~assets/fonts/geometria_bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: url("~assets/fonts/geometria_medium.otf") format("opentype");
+}
