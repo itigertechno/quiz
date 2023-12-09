@@ -62,12 +62,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "TappingPlan",
-}
-</script>
-
 <style scoped lang="scss">
 .tapping-plan {
   padding: 31px 20px 62px 20px;

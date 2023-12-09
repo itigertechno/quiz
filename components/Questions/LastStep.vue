@@ -7,17 +7,21 @@
 
     <div class="last__graph"></div>
 
-    <TappingPlan />
+    <StaticOne />
+    <StaticTwo />
+    <StaticThree />
+    <StaticFour />
+    <StaticFive />
+
+    <div class="last__button">
+      <KitButton padding green defaultButton>Continue</KitButton>
+    </div>
   </div>
 </template>
 
 <script>
-import TappingPlan from '../Last/TappingPlan.vue';
-
 export default {
   name: "LastStep",
-
-  components: { TappingPlan }
 }
 </script>
 
@@ -51,6 +55,11 @@ export default {
 
     width: 353px;
     height: 180px;
+  }
+
+  &__button {
+    padding: 20px;
+    width: 100%;
   }
 }
 </style>

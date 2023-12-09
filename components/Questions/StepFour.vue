@@ -18,7 +18,7 @@
       </KitButton>
     </div>
 
-    <div class="about__block" v-if="selectedButton !== null">
+    <div class="about__block" v-if="selectedButton !== null && selectedButton !== 0">
       <NoteBlock
         :title="'EFT = Tapping'"
         :note="`EFT (Emotional Freedom Technique), 
@@ -59,7 +59,8 @@ export default {
 .about {
   padding: 20px;
   margin-top: 8px;
-  max-width: 350px;
+  
+  box-sizing: border-box;
   width: 100%;
 
   &__title {

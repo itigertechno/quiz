@@ -2,16 +2,14 @@
   <div class="plan">
     <div class="plan__title">
       <div class="plan__title-first">Your personal EFT plan for</div>
-      <div class="plan__title-second">joint and muscle paint relief</div>
+      <div class="plan__title-second">{{ reason }}</div>
       <div class="plan__title-third">is Ready!</div>
     </div>
 
     <div class="plan__graph"></div>
 
     <div class="plan__parameters">
-      <div class="plan__parameters-title">
-        Based on your parameters
-      </div>
+      <div class="plan__parameters-title">Based on your parameters</div>
 
       <div class="plan__parameters-blocks">
         <div class="plan__parameters-blocks__block">
@@ -55,6 +53,8 @@
     <KitButton defaultButton padding fixed green @click="next">
       Get your first recommendations!
     </KitButton>
+
+    <KitSheet class="plan__sheet" />
   </div>
 </template>
 
@@ -69,7 +69,19 @@ export default {
     next() {
       this.$store.commit("nextPage");
     }
-  }
+  },
+
+  computed: {
+    reason() {
+      return this.$store.getters.selectReason;
+    },
+  },
+
+  methods: {
+    next() {
+      this.$store.commit("nextPage")
+    },
+  },
 }
 </script>
 
@@ -94,14 +106,14 @@ export default {
       font-family: "Noto Serif HK";
       font-weight: 700;
       font-size: 24px;
-      color: #B87057;
+      color: #b87057;
     }
 
     &-third {
       font-family: "Noto Serif HK";
       font-weight: 700;
       font-size: 32px;
-      color: #14AF68;
+      color: #14af68;
     }
   }
 
@@ -113,6 +125,8 @@ export default {
     height: 233px;
 
     margin-top: 22px;
+    animation: revealFromLeft 3s ease-out;
+    /* Настройте длительность и сглаживание по вашему вкусу */
   }
 
   &__parameters {
@@ -137,20 +151,21 @@ export default {
 
       &__block {
         padding: 12px;
-        border: 1.4px solid #F1E5DA;
-        border-radius: 16px; 
+        border: 1.4px solid #f1e5da;
+        border-radius: 16px;
 
         display: flex;
         align-items: center;
         gap: 12px;
         width: 100%;
         flex: 1;
+
         .block {
           &__circle {
             width: 26px;
             height: 26px;
             border-radius: 50%;
-            border: 3px solid #ECDFD4;
+            border: 3px solid #ecdfd4;
           }
 
           &__text {
@@ -159,7 +174,7 @@ export default {
               font-weight: 400;
               font-size: 15px;
 
-              color: #988D85;
+              color: #988d85;
             }
 
             &-subtitle {
@@ -173,6 +188,30 @@ export default {
         }
       }
     }
+  }
+
+  &_sheet {
+    backdrop-filter: blur(5px);
+  }
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealFromLeft {
+  from {
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 100%);
+  }
+
+  to {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
 }
 </style>

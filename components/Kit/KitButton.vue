@@ -88,6 +88,11 @@ export default {
     gap12: {
       type: Boolean,
       default: false,
+    },
+
+    notActive: {
+      type: Boolean,
+      default: false,
     }
   },
 
@@ -175,6 +180,10 @@ export default {
         classes.push("button--gap12");
       }
 
+      if (this.notActive) {
+        classes.push("button--notactive")
+      }
+
       return classes;
     },
   },
@@ -240,11 +249,6 @@ export default {
 
     transition: 0.2s background-color, 0.2s border-color;
     color: #302823;
-
-    &:hover {
-      border: 1.4px solid #d29881;
-      background-color: #edd6cd;
-    }
   }
 
   &--notcenter {
@@ -283,6 +287,13 @@ export default {
 
   &--gap12 {
     gap: 12px;
+  }
+
+  &--notactive {
+    border: 1px solid #EDD6CD;
+    background-color: #F5EADE;
+
+    color: #CEC1B8;
   }
 }
 </style>

@@ -45,6 +45,9 @@ export default {
 
   padding: 20px;
 
+  width: 100%;
+  box-sizing: border-box;
+
   &__background {
     background-image: url("/images/questions/first.svg");
     background-repeat: no-repeat;

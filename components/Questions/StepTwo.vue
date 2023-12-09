@@ -6,7 +6,7 @@
 
     <div class="second__body">
       <Physical v-if="type === 'physical'" />
-      <Physical v-if="type === 'emotional'" />
+      <Emotional v-if="type === 'emotional'" />
     </div>
   </div>
 </template>

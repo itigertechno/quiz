@@ -17,5 +17,17 @@ export default {
     ]
   },
 
+  plugins: [
+    { src: '~plugins/sheet.js', mode: "client" }
+  ],
+
+  components: [
+    '~/components',
+    '~/components/Kit',
+    '~/components/Last',
+    '~/components/Index',
+    '~/components/Questions'
+  ],
+
   css: ["@/assets/scss/main.scss"],
 }

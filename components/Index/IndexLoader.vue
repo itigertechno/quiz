@@ -16,13 +16,13 @@ export default {
     return {
       value: 0,
       timer: null,
-    }
+    };
   },
 
   mounted() {
     this.timer = setInterval(() => {
       this.value += 1;
-    }, 50);
+    }, 20);
   },
 
   watch: {
@@ -32,37 +32,47 @@ export default {
 
         this.$router.push("/questions");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
 .loader {
-  display: flex;
-  justify-content: center;
+  --offset: 10px;
+  width: 245px;
+  height: 413px;
+  position: relative;
+  border-radius: 300px;
+  align-self: center;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    background: conic-gradient(#f5eade, #ce8c74);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    aspect-ratio: 1;
+    width: 400px;
+    animation: rotate 2s linear infinite;
+  }
 
   &__circle {
-    // position: relative;
-    border: 2px solid #CE8C74;
+    position: absolute;
+    background-color: #FFF9EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    inset: 0;
+    z-index: 10;
     border-radius: 300px;
-    padding: 12px;
-
-    // &::before {
-    //   content: "";
-
-    //   position: absolute;
-    //   inset: 0;
-    //   border-radius: 300px;
-    //   padding: 12px;
-
-
-    //   border: 2px solid;
-    //   // border-image: conic-gradient(from 90deg, #CE8C74, #F5EADE 0.1turn, #F5EADE 0.15turn, #CE8C74 0.25turn) 30;
-    //   // animation: borderRotate 2500ms linear infinite forwards;
-    // }
+    margin: 2px;
 
     &-image {
+      position: absolute;
       background-image: url(/images/index/loader.png);
       background-repeat: no-repeat;
       background-position: center center;
@@ -78,7 +88,7 @@ export default {
       &__percent {
         position: absolute;
 
-        color: #CE8C74;
+        color: #ce8c74;
 
         font-weight: 500;
         font-family: "Noto Serif HK";
@@ -92,15 +102,13 @@ export default {
   }
 }
 
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 90deg;
-  inherits: true;
-}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
 
-@keyframes borderRotate {
-  100% {
-    --angle: 420deg;
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
   }
 }
 </style>

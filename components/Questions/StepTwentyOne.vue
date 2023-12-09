@@ -1,7 +1,7 @@
 <template>
   <div class="activity">
     <div class="activity__title">
-      What activity brings you joy <br>and peace?
+      What activity brings you joy <br />and peace?
     </div>
 
     <div class="activity__buttons">
@@ -13,16 +13,16 @@
         flex
         v-for="(button, index) in buttons"
         :key="index"
-        :selected="selectedButtons[index]"
+        :selected="selectedButtons.includes(index)"
+        @click="toggleSelectedButton(index)"
         class="emotions__buttons-button"
       >
-      {{ button }}
-        <input 
-          type="checkbox" 
+        {{ button }}
+        <input
+          type="checkbox"
           :id="index"
           class="custom-checkbox"
-          :checked="selectedButtons"
-          v-model="selectedButtons[index]"
+          :checked="selectedButtons.includes(index)"
         />
         <label :for="index" />
       </KitButton>
@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import KitButton from '../Kit/KitButton.vue';
+import KitButton from "../Kit/KitButton.vue";
 
 export default {
   name: "StepTwentyOne",
@@ -49,10 +49,21 @@ export default {
         "👤 Solitude",
         "👨‍👩‍👧 Family time",
         "💡 Other",
-      ]
-    }
-  }
-}
+      ],
+    };
+  },
+  methods: {
+    toggleSelectedButton(index) {
+      let indexOfButton = this.selectedButtons.indexOf(index);
+
+      if (indexOfButton !== -1) {
+        this.selectedButtons.splice(indexOfButton, 1);
+      } else {
+        this.selectedButtons.push(index);
+      }
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">

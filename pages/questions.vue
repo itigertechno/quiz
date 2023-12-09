@@ -42,77 +42,7 @@
 </template>
 
 <script>
-import KitButton from "../components/Kit/KitButton.vue";
-import UIHeader from "../components/UIHeader.vue";
-import StepOne from "../components/Questions/StepOne.vue";
-import StepTwo from "../components/Questions/StepTwo.vue";
-import StepThree from "../components/Questions/StepThree.vue";
-import StepFour from "../components/Questions/StepFour.vue";
-import StepFive from "../components/Questions/StepFive.vue";
-import StepSix from "../components/Questions/StepSix.vue";
-import StepSeven from "../components/Questions/StepSeven.vue";
-import StepEight from "../components/Questions/StepEight.vue";
-import StepNinth from "../components/Questions/StepNinth.vue";
-import StepTen from "../components/Questions/StepTen.vue";
-import StepEleven from "../components/Questions/StepEleven.vue";
-import StepTwelve from "../components/Questions/StepTwelve.vue";
-import StepThirteen from "../components/Questions/StepThirteen.vue";
-import StepFourteen from "../components/Questions/StepFourteen.vue";
-import EmotionalTwo from "../components/Questions/EmotionalTwo.vue";
-import StepSixteen from "../components/Questions/StepSixteen.vue";
-import StepSeventeen from "../components/Questions/StepSeventeen.vue";
-import StepEighteen from "../components/Questions/StepEighteen.vue";
-import StepNineteen from "../components/Questions/StepNineteen.vue";
-import StepTwenty from "../components/Questions/StepTwenty.vue";
-import StepTwentyOne from "../components/Questions/StepTwentyOne.vue";
-import StepTwentyTwo from "../components/Questions/StepTwentyTwo.vue";
-import StepTwentyThree from "../components/Questions/StepTwentyThree.vue";
-import StepTwentyFour from "../components/Questions/StepTwentyFour.vue";
-import StepTwentyFive from "../components/Questions/StepTwentyFive.vue";
-import StepTwentySix from "../components/Questions/StepTwentySix.vue";
-import StepTwentySeven from "../components/Questions/StepTwentySeven.vue";
-import StepTwentyEight from "../components/Questions/StepTwentyEight.vue";
-import StepTwentyNine from "../components/Questions/StepTwentyNine.vue";
-import StepThirty from "../components/Questions/StepThirty.vue";
-import LastStep from "../components/Questions/LastStep.vue";
-
 export default {
-  components: {
-    KitButton,
-    UIHeader,
-    StepOne,
-    StepTwo,
-    StepThree,
-    StepFour,
-    StepFive,
-    StepSix,
-    StepSeven,
-    StepEight,
-    StepNinth,
-    StepTen,
-    StepEleven,
-    StepTwelve,
-    StepThirteen,
-    StepFourteen,
-    EmotionalTwo,
-    StepSixteen,
-    StepSeventeen,
-    StepEighteen,
-    StepNineteen,
-    StepTwenty,
-    StepTwentyOne,
-    StepTwentyTwo,
-    StepTwentyThree,
-    StepTwentyFour,
-    StepTwentyFive,
-    StepTwentySix,
-    StepTwentySeven,
-    StepTwentyEight,
-    StepTwentyNine,
-    StepThirty,
-    LastStep
-  },
-
   data() {
     return {
       buttonBackground: [3],

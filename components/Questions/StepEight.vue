@@ -56,8 +56,9 @@ export default {
 .practice {
   padding: 20px;
   margin-top: 8px;
-  max-width: 350px;
+
   width: 100%;
+  box-sizing: border-box;
 
   &__title {
     font-family: "Noto Serif HK";

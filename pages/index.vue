@@ -2,7 +2,9 @@
   <div class="main">
     <div class="main__wrapper">
       <div class="main__wrapper-header">
-        <h1 class="main__wrapper-header__title">Tapping will change your <br><span>LIFE</span></h1>
+        <h1 class="main__wrapper-header__title">
+          Tapping will change your <br /><span>LIFE</span>
+        </h1>
       </div>
 
       <div class="main__wrapper-body">
@@ -12,17 +14,16 @@
       <div class="main__wrapper-footer">
         <div class="main__wrapper-footer__text">
           <div>
-            <span>3 250 000<span class="symbol">+</span></span> <span class="text">people</span>
+            <span>3 250 000<span class="symbol">+</span></span>
+            <span class="text">people</span>
           </div>
           <h4>already use Slowdive EFT therapy</h4>
         </div>
 
         <div class="main__wrapper-footer__icons">
-          <div class="main__wrapper-footer__icons--appstore">
-          </div>
+          <div class="main__wrapper-footer__icons--appstore"></div>
 
-          <div class="main__wrapper-footer__icons--googleplay">
-          </div>
+          <div class="main__wrapper-footer__icons--googleplay"></div>
         </div>
       </div>
     </div>
@@ -30,13 +31,13 @@
 </template>
 
 <script>
-import IndexLoader from '../components/Index/IndexLoader.vue';
+import IndexLoader from "../components/Index/IndexLoader.vue";
 
 export default {
   components: {
     IndexLoader,
-  }
-}
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -53,18 +54,25 @@ export default {
 
     &-header {
       &__title {
-        font-size: 40px;
-        line-height: 48px;
-
+        font-size: 28px;
+        line-height: 28px;
+        font-family: "Noto Serif HK";
         text-align: center;
         color: #302823;
-        margin: 0;
 
         span {
           font-weight: 700;
-          color: #CE8C74;
+          line-height: 48px;
+          font-size: 48px;
+          color: #ce8c74;
         }
       }
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &-footer {
@@ -83,7 +91,7 @@ export default {
           span {
             font-weight: 700;
             font-size: 40px;
-            color: #CE8C74;
+            color: #ce8c74;
             font-family: "Noto Serif HK";
 
             .symbol {

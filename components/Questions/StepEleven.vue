@@ -8,16 +8,18 @@
     <div class="feel__selector">
       <KitSelector :title="selector[selectedItem]" :items="items" />
     </div>
+    <KitRadio/>
   </div>
 </template>
 
 <script>
 import KitSelector from '../Kit/KitSelector.vue';
+import KitRadio from '../Kit/KitRadio.vue';
 import NoteBlock from '../Kit/NoteBlock.vue';
 
 export default {
   name: "StepEleven",
-  components: { NoteBlock, KitSelector },
+  components: { NoteBlock, KitSelector, KitRadio },
 
   data() {
     return {

@@ -74,6 +74,10 @@ export default {
   padding: 20px;
   margin-top: 8px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &__title {
     font-family: "Noto Serif HK";
     font-weight: 700;
@@ -93,14 +97,12 @@ export default {
     justify-content: center;
     gap: 12px;
     padding-bottom: 12px;
+
+    max-width: 350px;
   }
 
   &__block {
     margin-top: 12px;
   }
-
-  // &__buttons {
-
-  // }
 }
 </style>
