@@ -20,6 +20,8 @@
       <div class="uiheader__count" v-if="step <= quizLength">
         <span>{{ step }}</span>/{{ quizLength }}
       </div>
+
+      <div class="uiheader__count" v-else></div>
     </div>
 
     <div class="uiheader__progress" v-if="step <= quizLength">
@@ -150,15 +152,12 @@ export default {
 
   &__progress {
     margin-top: 10px;
-    width: calc(100% - 20px);
+    width: 100%;
     position: relative;
-    padding: 0 20px;
-
-    max-width: 450px;
+    box-sizing: border-box;
 
     &-wrapper {
       &__line {
-        // width: calc(100% - 20px);
         display: flex;
         align-items: center;
         background: #CE8C74;
@@ -170,7 +169,7 @@ export default {
           content: "";
           position: absolute;
           background: #ECDFD4;
-          width: calc(100% - 20px);
+          width: 100%;
           height: 3px;
           z-index: -1;
           border-radius: 10px;

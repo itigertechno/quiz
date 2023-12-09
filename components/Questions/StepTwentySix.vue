@@ -13,7 +13,7 @@
 
       <div class="plan__parameters-blocks">
         <div class="plan__parameters-blocks__block">
-          <div class="block__circle"></div>
+          <div class="block__circle stress"></div>
 
           <div class="block__text">
             <div class="block__text-title">Level of</div>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="plan__parameters-blocks__block">
-          <div class="block__circle"></div>
+          <div class="block__circle anxiety"></div>
 
           <div class="block__text">
             <div class="block__text-title">Level of</div>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="plan__parameters-blocks__block">
-          <div class="block__circle"></div>
+          <div class="block__circle frustration"></div>
 
           <div class="block__text">
             <div class="block__text-title">Level of</div>
@@ -40,7 +40,7 @@
         </div>
 
         <div class="plan__parameters-blocks__block">
-          <div class="block__circle"></div>
+          <div class="block__circle lack"></div>
 
           <div class="block__text">
             <div class="block__text-title">Level of</div>
@@ -86,6 +86,37 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@property --progress-value {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes progressStress {
+  to {
+    --progress-value: 50;
+  }
+}
+
+@keyframes progressAnxiety {
+  to {
+    --progress-value: 25;
+  }
+}
+
+@keyframes progressFrustration {
+  to {
+    --progress-value: 75;
+  }
+}
+
+@keyframes progressLack {
+  to {
+    --progress-value: 50;
+  }
+}
+
+
 .plan {
   padding: 20px;
 
@@ -160,12 +191,32 @@ export default {
         width: 100%;
         flex: 1;
 
+
         .block {
           &__circle {
-            width: 26px;
-            height: 26px;
+            width: 29px;
+            height: 29px;
             border-radius: 50%;
-            border: 3px solid #ecdfd4;
+
+            background:
+              radial-gradient(closest-side, #FFF9EF 79%, transparent 80% 100%),
+              conic-gradient(#CE8C74 calc(var(--progress-value) * 1%), #ECDFD4 0);
+
+            &.stress {
+              animation: progressStress 2s 1 forwards;
+            }
+
+            &.anxiety {
+              animation: progressAnxiety 2s 1 forwards;
+            }
+
+            &.frustration {
+              animation: progressFrustration 2s 1 forwards;
+            }
+
+            &.lack {
+              animation: progressLack 2s 1 forwards;
+            }
           }
 
           &__text {

@@ -50,6 +50,8 @@ export default {
       border-radius: 20px;
       transition: 0.3s border;
       border: 2px solid #FFF9EF;
+
+      transition: 0.3s opacity, 0.3s border-color;
     }
   }
 
@@ -58,7 +60,7 @@ export default {
     font-family: "Poppins";
     font-weight: 400;
 
-    transition: 0.3s color;
+    transition: color 0.3s;
     color: #302823;
 
     max-width: 150px;
@@ -68,6 +70,7 @@ export default {
     #{$self}__image {
       img {
         border: 2px solid #D29881;
+        opacity: 0.9;
       }
     }
 

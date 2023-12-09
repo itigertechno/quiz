@@ -58,7 +58,7 @@ export default {
   }
 
   &__button {
-    padding: 20px;
+    // padding: 20px;
     width: 100%;
   }
 }

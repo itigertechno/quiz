@@ -130,7 +130,7 @@ export default {
       thirdTimer: null,
       fourthTimer: null,
 
-      miliseconds: 1,
+      miliseconds: 15,
 
       resultModal: false,
     }
@@ -209,6 +209,17 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@property --progress-value {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes progress {
+  to {
+    --progress-value: 100;
+  }
+}
 .loading-block {
   padding: 16px;
   border: 1px solid #E3D5CA;
@@ -285,12 +296,18 @@ export default {
         }
 
         &-circle {
-          width: 28px;
-          height: 28px;
+          width: 31px;
+          height: 31px;
 
           border-radius: 50%;
 
-          border: 3px solid #EDD6CD;
+          // border: 3px solid #EDD6CD;
+
+          background:
+              radial-gradient(closest-side, #FFF9EF 79%, transparent 80% 100%),
+              conic-gradient(#CE8C74 calc(var(--progress-value) * 1%), #EDD6CD 0);
+
+          animation: progress 2s 1 forwards;
         }
       }
 

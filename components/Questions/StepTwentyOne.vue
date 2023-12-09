@@ -71,6 +71,9 @@ export default {
   padding: 20px;
   margin-top: 12px;
 
+  width: 100%;
+  box-sizing: border-box;
+
   &__title {
     font-family: "Noto Serif HK";
     font-weight: 700;

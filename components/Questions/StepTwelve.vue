@@ -3,7 +3,7 @@
     <div class="feel__title">Is it easy for you to share <br>your thoughts and feelings<br> with others?</div>
 
     <div class="feel__selector">
-      <KitSelector :title="selector[selectedItem]" :items="items" />
+      <KitSelector :items="items" />
     </div>
   </div>
 </template>
@@ -17,16 +17,28 @@ export default {
 
   data() {
     return {
-      selector: [
-        "Rarely",
-        "Not really",
-        "Sometimes",
-        "Usually",
-        "Always",
+      items: [
+        {
+          emoji: "😩",
+          title: "Rarely"
+        },
+        {
+          emoji: "🙁",
+          title: "Not really",
+        },
+        {
+          emoji: "😐",
+          title: "Sometimes",
+        },
+        {
+          emoji: "🙂",
+          title: "Usually",
+        },
+        {
+          emoji: "😀",
+          title: "Always"
+        }
       ],
-
-      selectedItem: 0,
-      items: 5,
     }
   }
 }

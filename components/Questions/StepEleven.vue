@@ -6,33 +6,39 @@
     <div class="feel__title">Do you feel fully connected <br> with your body?</div>
 
     <div class="feel__selector">
-      <KitSelector :title="selector[selectedItem]" :items="items" />
+      <KitSelector :items="items" />
     </div>
-    <KitRadio/>
   </div>
 </template>
 
 <script>
-import KitSelector from '../Kit/KitSelector.vue';
-import KitRadio from '../Kit/KitRadio.vue';
-import NoteBlock from '../Kit/NoteBlock.vue';
-
 export default {
   name: "StepEleven",
-  components: { NoteBlock, KitSelector, KitRadio },
 
   data() {
     return {
-      selector: [
-        "Not at all",
-        "A little bit",
-        "Sometimes",
-        "Often",
-        "Always",
+      items: [
+        {
+          emoji: "😩",
+          title: "Not at all",
+        },
+        {
+          emoji: "🙁",
+          title: "A little bit",
+        },
+        {
+          emoji: "😐",
+          title: "Sometimes",
+        },
+        {
+          emoji: "🙂",
+          title: "Often"
+        },
+        {
+          emoji: "😀",
+          title: "Always"
+        }
       ],
-
-      selectedItem: 0,
-      items: 5,
     }
   }
 }

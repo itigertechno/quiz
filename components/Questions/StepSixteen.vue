@@ -38,8 +38,12 @@ export default {
 
 <style scoped lang="scss">
 .reported {
-  padding: 20px;
-  margin-top: 23px;
+  margin-top: 43px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 
   &__title {
     font-family: "Poppins";
