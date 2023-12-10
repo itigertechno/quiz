@@ -26,12 +26,6 @@
       People using plan for 3 months<br> achieve twice as many results as for 1 month
     </div>
 
-    <div class="plans__claim">
-      <KitButton defaultButton green block>CLAIM MY PLAN</KitButton>
-    </div>
-
-    <div class="plans__payments">
-    </div>
   </div>
 </template>
 

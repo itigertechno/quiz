@@ -10,19 +10,29 @@
     <StaticOne />
     <StaticTwo />
     <StaticThree />
-    <StaticFour />
-    <StaticFive />
+    <StaticFour ref="scrollTarget" />
 
-    <div class="last__button">
-      <KitButton padding green defaultButton>Continue</KitButton>
+    <div class="last__claim">
+      <KitButton @click="scrollToStaticFour" padding defaultButton green >CLAIM MY PLAN</KitButton>
     </div>
+
+    <div class="last__payments"></div>
+    <StaticFive />
   </div>
 </template>
 
 <script>
+import { scrollTo } from "vue-scrollto";
+
 export default {
   name: "LastStep",
-}
+  methods: {
+    scrollToStaticFour() {
+      // Используйте vue-scrollto для плавной прокрутки к элементу
+      scrollTo(this.$refs.scrollTarget.$el, 500, { offset: -50 }); // 500 - время анимации в миллисекундах, offset - отступ от верха
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -42,7 +52,7 @@ export default {
     color: #302823;
 
     div {
-      color: #14AF68;
+      color: #14af68;
       font-size: 28px;
     }
   }
@@ -58,8 +68,28 @@ export default {
   }
 
   &__button {
-    // padding: 20px;
     width: 100%;
   }
+
+   &__claim {
+    position: sticky;
+    bottom: 0;
+    margin-top: 32px;
+    width: 100%;
+    
+  }
+
+  &__payments {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/icons/payments.svg");
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    height: 100px;
+  }
 }
+
 </style>

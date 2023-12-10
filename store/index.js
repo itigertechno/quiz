@@ -1,5 +1,5 @@
 export const state = () => ({
-  step: 1,
+  step: 31,
   type: "",
   reason: "",
   eft: {},

@@ -69,7 +69,7 @@ export default {
 
   watch: {
     checked() {
-      this.progress = this.checked * 80;
+      this.progress = this.checked * 70;
     }
   }
 }
